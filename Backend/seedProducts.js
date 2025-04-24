@@ -13,147 +13,114 @@ mongoose.connect(process.env.MONGO_URI, {
 
   const products = [
     {
-      name: "Nike Air Max",
+      name: "Puma Running Shoes",
       category: "Men",
-      price: 4999,
-      image: "https://rukminim2.flixcart.com/image/850/1000/xif0q/shoe/q/s/m/-original-imah46k9d3wgdz26.jpeg?q=90&crop=false",
-      description: "Comfortable sports shoes for men."
+      price: 4299,
+      image: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/380005/01/sv01/fnd/IND/fmt/png",
+      description: "Lightweight and breathable running shoes for men."
     },
     {
-      name: "Zara Heels",
+      name: "Levi's Denim Jacket",
+      category: "Men",
+      price: 2999,
+      image: "https://www.thevintagetwin.com/cdn/shop/products/39411_batch12_9926.jpg?v=1676329245&width=823",
+      description: "Classic blue denim jacket for a rugged look."
+    },
+    {
+      name: "Boat Bluetooth Headphones",
+      category: "Men",
+      price: 1499,
+      image: "https://m.media-amazon.com/images/I/61KNJav3S9L._SX679_.jpg",
+      description: "Wireless headphones with deep bass and 20h battery."
+    },
+    {
+      name: "Raymond Formal Shirt",
+      category: "Men",
+      price: 1899,
+      image: "https://myraymond.com/cdn/shop/files/RMSV12716-N7-1.jpg?v=1725603881",
+      description: "Premium white shirt perfect for meetings and events."
+    },
+    {
+      name: "Campus Casual Sneakers",
+      category: "Men",
+      price: 999,
+      image: "https://www.rsole.in/cdn/shop/products/15_7ae1ee36-acf3-4950-bec5-56ee664a4d40_1024x1024@2x.jpg?v=1673967227",
+      description: "Trendy black sneakers for everyday wear."
+    },
+    {
+      name: "Peach Silk Saree",
       category: "Women",
-      price: 2499,
-      image: "https://assetscdn1.paytm.com/images/catalog/product/F/FO/FOOFLAT-N-HEELSFLAT69822D5E10BF4/1564587160454_0..jpg?imwidth=320&impolicy=hq",
-      description: "Elegant high heels for women."
+      price: 2799,
+      image: "https://www.raetrends.com/cdn/shop/files/RAE-Trends-Peach-Banarasi-Silk-Kanjivaram-Saree-1.jpg?v=1711339127&width=823",
+      description: "Elegant peach silk saree with floral design."
     },
     {
-      name: "Kids T-shirt",
+      name: "Biba Anarkali Kurta Set",
+      category: "Women",
+      price: 3199,
+      image: "https://images.biba.in/dw/image/v2/BKQK_PRD/on/demandware.static/-/Sites-biba-product-catalog/default/dw2b220389/images/aw21/skd7670aw21ligrn_1.jpg?sw=502&sh=753",
+      description: "Traditional anarkali set with dupatta and churidar."
+    },
+    {
+      name: "Nike Sports Shoes",
+      category: "Women",
+      price: 1495,
+      image: "https://5.imimg.com/data5/SELLER/Default/2021/9/CU/NF/GX/138056956/whatsapp-image-2021-09-16-at-1-23-23-pm-1-jpeg-1000x1000.jpeg",
+      description: "High-impact support for active workouts and gym."
+    },
+    {
+      name: "Vero Moda Midi Dress",
+      category: "Women",
+      price: 1799,
+      image: "https://assets.ajio.com/medias/sys_master/root/20230628/fYkM/649bbeedeebac147fc1ec112/-473Wx593H-465935148-black-MODEL.jpg",
+      description: "Chic floral printed midi dress for outings and brunch."
+    },
+    {
+      name: "H&M Basic Tee Pack",
+      category: "Women",
+      price: 899,
+      image: "https://image.hm.com/assets/hm/9d/c9/9dc9233f9a9364ff3eac5ef2078545cb492045e5.jpg?imwidth=768",
+      description: "Pack of 2 soft cotton t-shirts for daily use."
+    },
+    {
+      name: "Kids Unicorn Hoodie",
+      category: "Kids",
+      price: 1099,
+      image: "https://m.media-amazon.com/images/I/71JuRFPEQtL._SX679_.jpg",
+      description: "Cute unicorn printed hoodie for girls."
+    },
+    {
+      name: "Kids Marvel Avengers Set",
+      category: "Kids",
+      price: 999,
+      image: "https://rukminim2.flixcart.com/image/416/416/xif0q/action-figure/v/a/f/3-marvel-avengers-super-hero-action-figure-toy-set-for-kids-original-imagqmzftefvfxkh.jpeg?q=70&crop=false",
+      description: "Superhero tee & shorts set for boys."
+    },
+    {
+      name: "Kids Dinosaur Pajamas",
+      category: "Kids",
+      price: 699,
+      image: "https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/1/1/1118581an6321_1.jpg?rnd=20200526195200&tr=w-512",
+      description: "Comfy cotton nightwear with dino prints."
+    },
+    {
+      name: "Frozen Elsa School Bag",
       category: "Kids",
       price: 899,
-      image: "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/22009020/2024/3/19/28c4c50d-c962-4fc7-b7b8-1338d988ca961710827077560-YK-Disney-Boys-Mickey-Mouse-Printed-Holi-T-shirt-53117108270-1.jpg",
-      description: "Colorful and comfy tee for kids."
+      image: "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTAXfTz7EkgwSQFr7-gtF0SEncMm6ogSwyM6VlhLBN02LGUIG92F541gKm39wjmfz87LJ4ML-oYFgstzW1BiqfffKZQRR0KoK7-whsmrre-l6_v8jTCs6-HTg",
+      description: "Stylish school bag with Elsa print and side bottle holder."
     },
-    {
-        name: "Kids Cartoon T-shirt",
-        category: "Kids",
-        price: 899,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTESpPe9gYjwpImWkY0Yr_evJATV1pjGfY3-A&s",
-        description: "Colorful and comfy tee for kids."
-      }, {
-        name: "Kids  T-shirt",
-        category: "Kids",
-        price: 899,
-        image: "https://i.ebayimg.com/images/g/aNEAAOSw-QtfgSjF/s-l400.jpg",
-        description: "Colorful and comfy tee for kids."
-      }, {
-        name: "shirt",
-        category: "Kids",
-        price: 790,
-        image: "https://cuteandcool.co.in/cdn/shop/files/dino-car-tee-357557.jpg?v=1715238763",
-        description: "Colorful and comfy tee for kids."
-      },
-      {
-        name: "shirt",
-        category: "Kids",
-        price: 348,
-        image: "https://assets.ajio.com/medias/sys_master/root/20240604/O6qR/665f001c05ac7d77bb9bc2bb/-473Wx593H-700041966-multi-MODEL.jpg",
-        description: "Colorful and comfy tee for kids."
-      },
-      {
-        name: "Kids  T-shirt",
-        category: "Kids",
-        price: 970,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwXLwf6hoqkIs0t-UPTICaAvwm08qY_Ozq1w&s",
-        description: "Colorful and comfy tee for kids."
-      },
-      {
-        name: "Kids Cartoon T-shirt",
-        category: "Kids",
-        price: 230,
-        image: "https://store.swarajyamag.com/cdn/shop/files/Little_Krishna_-_Kids_T-shirt_green.png?v=1739361968",
-        description: "Colorful and comfy tee for kids."
-      },
-      {
-        name: "T-shirt",
-        category: "Kids",
-        price: 200,
-        image: "https://www.motherchoice.in/cdn/shop/files/5mc15.png?v=1721105488",
-        description: "Colorful and comfy tee for kids."
-      },
-      {
-        name: "30-day-Gromming-Kit",
-        category: "Men",
-        price: 1978,
-        image: "https://www.themancompany.com/cdn/shop/files/30-day-groomingkit-Primary-Images.jpg?v=1686808318",
-        description: "Keep your A-game on throughout the festive season! Our 30-Day Grooming Kit has everything that you need to make a statement for all your celebrations.."
-      },
-      {
-        name: "SandStone ComfortCraft Trousers",
-        category: "Men",
-        price: 1997,
-        image: "https://www.panamerica.studio/cdn/shop/files/0A0A8670.jpg?v=1721279665&width=533",
-        description: "hese trousers offer a perfect blend of comfort and sophistication."
-      },
-      {
-        name: "men black slim fit hooded casual shirt",
-        category: "Men",
-        price: 499,
-        image: "https://img0.junaroad.com/uiproducts/15651705/zoom_0-1715923646.jpg",
-        description: "Be a head turner by wearing this casual shirt from Geum and grab it in black colour.."
-      },
-      {
-        name: "men regular fit floral printed short sleeves casual shirt",
-        category: "Men",
-        price: 999,
-        image: "https://img0.junaroad.com/uiproducts/21577192/zoom_0-1728905820.jpg",
-        description: "Bored of the conventional shirt look? Well, these casual shirts in graceful neck designs and short sleeves will give you a whole new dimension!."
-      },
-      {
-        name: "men printed short sleeve casual shirt",
-        category: "Men",
-        price: 499,
-        image: "https://img0.junaroad.com/uiproducts/21578662/zoom_0-1728976363.jpg",
-        description: "Showcase this top in wonderful prints and wear it for different occasions.."
-      },
-     
-      {
-        name: "Maharani Bandhani Green Saree",
-        category: "Women",
-        price: 2499,
-        image: "https://www.urbanwardrobe.in/cdn/shop/products/1_134bbef8-db2c-44df-a676-22d261cc87a7.jpg?v=1678845100&width=713",
-        description: " This stylish bandhani green printed georgette saree comes with a blouse piece."
-      },
-      {
-        name: "Kanjivaram Jacquard ",
-        category: "Women",
-        price: 2499,
-        image: "https://m.media-amazon.com/images/I/51p3ueMs3eL._SX522_.jpg",
-        description: "Fabric: Soft Silk, Blouse Fabric : Soft Silk. Work: Jacquard Woven Stylish Sari, Zari Woven.."
-      },
-      {
-        name: " PARTY WEAR",
-        category: "Women",
-        price: 2499,
-        image: "https://thelibas.com/wp-content/uploads/2022/06/17255.jpg",
-        description: "Showcase this Dress in wonderful prints and wear it for different occasions."
-      },
-      {
-        name: "Ethrnic Wears",
-        category: "Women",
-        price: 2996,
-        image: "https://www.lavanyathelabel.com/cdn/shop/files/1_eb7dccc7-cb9a-4a54-a36e-9fbb32da21ed_1200x.jpg?v=1740035363",
-        description: "Best Fabric Qualuty for women."
-      },
-      {
-        name: "Western Wear",
-        category: "Women",
-        price: 759,
-        image: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTwQyTa-z41mb_hW5Z48AkLW2zDpxW1ygDiW-onLtHCNpT4t_RL5jsdDLVIw-rKLao2XwNMxaptIeGD6_EFUg_c18bi86YD2Pmz4buDNYW8vTi-w8EA3nftZw",
-        description: "Elegant Qualityfor women."
-      },
     
-
+    {
+      name: "Men's Analog Watch - Titan",
+      category: "Men",
+      price: 2249,
+      image: "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dwf55a821f/images/Titan/Catalog/90177TM02_1.jpg?sw=600&sh=600",
+      description: "Premium leather strap watch with classic dial."
+    },
+ 
   ];
+  
 
   await Product.deleteMany(); // Optional: clear existing products
   await Product.insertMany(products);

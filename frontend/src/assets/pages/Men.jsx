@@ -13,36 +13,40 @@ const Men = () => {
   }, []);
 
   return (
-    <div className="container py-4">
-      <h2 className="text-center mb-4">Men's Collection</h2>
+    <div style={{ backgroundColor: "#fff0f5", minHeight: "100vh", paddingTop: "2rem", paddingBottom: "2rem" }}>
+      <div className="container" style={{ maxWidth: "1140px" }}>
+        <h2 className="text-center fw-bold mb-5">Men's Collection</h2>
 
-      <div className="row">
-        {products.map((product) => (
-          <div className="col-md-4 mb-4" key={product._id}>
-            <Link
-              to={`/product/${product._id}`}
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              <div className="card h-100 shadow-sm">
-                <img
-                  src={product.image}
-                  className="card-img-top"
-                  alt={product.name}
-                  style={{ height: "250px", objectFit: "cover" }}
-                />
-                <div className="card-body d-flex flex-column justify-content-between">
-                  <div>
-                    <h5 className="card-title">{product.name}</h5>
-                    <p className="card-text text-danger fw-bold">₹{product.price}</p>
-                    <p className="card-text text-muted">
-                      {product.description?.slice(0, 60)}...
+        <div className="row g-4">
+          {products.map((product) => (
+            <div className="col-6 col-sm-4 col-md-3" key={product._id}>
+              <Link
+                to={`/product/${product._id}`}
+                className="text-decoration-none text-dark"
+              >
+                <div className="card border-0 shadow-sm h-100">
+                  <img
+                    src={product.image}
+                    className="card-img-top rounded-2"
+                    alt={product.name}
+                    style={{
+                      height: "220px",
+                      objectFit: "cover",
+                      borderBottom: "1px solid #eee",
+                    }}
+                  />
+                  <div className="card-body p-2">
+                    <h6 className="fw-semibold mb-1 text-truncate">{product.name}</h6>
+                    <p className="text-danger fw-bold mb-1">₹{product.price}</p>
+                    <p className="text-muted small mb-0">
+                      {product.description?.slice(0, 40)}...
                     </p>
                   </div>
                 </div>
-              </div>
-            </Link>
-          </div>
-        ))}
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

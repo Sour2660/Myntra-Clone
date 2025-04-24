@@ -4,7 +4,6 @@ import ProductCard from "../components/ProductCard";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
-  const [filter, setFilter] = useState("All");
 
   useEffect(() => {
     axios.get("http://localhost:5000/api/products")
@@ -12,35 +11,20 @@ const Home = () => {
       .catch((err) => console.error("Error fetching products:", err));
   }, []);
 
-  const filteredProducts =
-    filter === "All"
-      ? products
-      : products.filter((p) => p.category.toLowerCase() === filter.toLowerCase());
-
   return (
-    <div className="container mt-4">
-      <h2 className="text-center mb-4">All Products</h2>
+    <div style={{ backgroundColor: "#fff0f5", minHeight: "100vh", paddingTop: "2rem", paddingBottom: "2rem" }}>
+      <div className="container">
+        <h2 className="text-center mb-4 fw-bold">All Products</h2>
 
-      <div className="text-center mb-4">
-        {["All", "Men", "Women", "Kids"].map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setFilter(cat)}
-            className={`btn btn-${filter === cat ? "dark" : "outline-dark"} mx-2`}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
-
-      <div className="row justify-content-center">
-        {filteredProducts.length === 0 ? (
-          <p>No products found.</p>
-        ) : (
-          filteredProducts.map((product) => (
-            <ProductCard key={product._id} product={product} />
-          ))
-        )}
+        <div className="row justify-content-center">
+          {products.length === 0 ? (
+            <p className="text-center text-muted">No products found.</p>
+          ) : (
+            products.map((product) => (
+              <ProductCard key={product._id} product={product} />
+            ))
+          )}
+        </div>
       </div>
     </div>
   );
